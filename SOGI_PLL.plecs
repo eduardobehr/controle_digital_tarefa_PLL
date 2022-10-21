@@ -44,9 +44,9 @@ Plecs {
   AlgebraicLoopMethod "1"
   AlgebraicLoopTolerance "1e-6"
   Schematic {
-    Location      [1024, 47; 2048, 783]
+    Location      [1847, -207; 2871, 529]
     ZoomFactor    1
-    SliderPosition [444, 0]
+    SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -114,7 +114,7 @@ Plecs {
       Type          SineGenerator
       Name          "Sine Wave"
       Show          on
-      Position      [100, 65]
+      Position      [80, 115]
       Direction     right
       Flipped       off
       Parameter {
@@ -160,7 +160,7 @@ Plecs {
       Type          Sum
       Name          "Sum2"
       Show          off
-      Position      [235, 185]
+      Position      [240, 240]
       Direction     up
       Flipped       off
       Parameter {
@@ -170,7 +170,7 @@ Plecs {
       }
       Parameter {
         Variable      "Inputs"
-        Value         "++++"
+        Value         "+++++"
         Show          off
       }
     }
@@ -178,7 +178,7 @@ Plecs {
       Type          SineGenerator
       Name          "Sine Wave1"
       Show          on
-      Position      [100, 155]
+      Position      [105, 210]
       Direction     right
       Flipped       off
       Parameter {
@@ -211,7 +211,7 @@ Plecs {
       Type          SineGenerator
       Name          "Sine Wave2"
       Show          on
-      Position      [100, 255]
+      Position      [105, 310]
       Direction     right
       Flipped       off
       Parameter {
@@ -245,7 +245,7 @@ Plecs {
       SrcComponent  "Components/Control/Sources/White Noise"
       Name          "White Noise"
       Show          on
-      Position      [100, 360]
+      Position      [105, 415]
       Direction     up
       Flipped       off
       Frame         [-15, -15; 15, 15]
@@ -423,7 +423,7 @@ Plecs {
       Type          Goto
       Name          "Goto"
       Show          off
-      Position      [200, 65]
+      Position      [210, 110]
       Direction     right
       Flipped       off
       Parameter {
@@ -441,7 +441,7 @@ Plecs {
       Type          Goto
       Name          "Goto1"
       Show          off
-      Position      [270, 185]
+      Position      [275, 240]
       Direction     right
       Flipped       off
       Parameter {
@@ -624,20 +624,19 @@ Plecs {
       Position      [850, 230]
       Direction     up
       Flipped       off
-      Location      [0, 47; 2048, 804]
+      Location      [1448, -391; 3286, 642]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
-"G0AQQByAGUAYQAAAAAA/////wAAADsA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAHoA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB6AP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABMAP///wAACgAAAAOTAAAA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAcuAAAAffw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABy4AAABQAP///wAABy4AAANtAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAH0AAAAEAAAAfQAAAAUAAAB9AAAAAgAAAH0AAAADAAAAfQAAAAEAAAB9AAAACAAAAH0AAAAJAA"
-"AAfQAAAAYAAAB9AAAApQAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACHAAA"
-"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
-"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AAeAAAAAQAAAAAAAAPoAA=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAC"
+"AAAAH0AAAAJAAAAfQAAAAYAAAB9AAAABwAAAH0AAAAEAAAAfQAAAAUAAAB9AAAHLgAAAAsBAAABAA"
+"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACUAAAAAQAAAAAAAAB9AAAAAQAAAAAAAAB9AAA"
+"AAQAAAAAAAAB9AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAUjAAAAAQAAAAAAAAPoAA=="
       PlotPalettes  "AAAAAQAAAAMAAAABAAAAAwAAAAEC//8u4P//zMwAAAAAAAEC//8AAP///"
 "/8AAAAAAAEC//9PsP////8AAAAAAAMAAAABAAAAAAEAAAAAAQAAAAADAAAAAQAAAAEAAAABAAAAAQ"
 "AAAAEAAAABAAAAAwAAAAEAAAAAAQAAAAABAAAAAAMAAAABP/AAAAAAAAAAAAABQAgAAAAAAAAAAAA"
@@ -972,7 +971,6 @@ Plecs {
             }
           }
           Branch {
-            Points        [475, 90; 495, 90]
             DstComponent  "1"
             DstTerminal   1
           }
@@ -981,10 +979,68 @@ Plecs {
           Type          Signal
           SrcComponent  "2"
           SrcTerminal   1
-          Points        [45, 90; 65, 90]
           DstComponent  "Sum"
           DstTerminal   2
         }
+      }
+    }
+    Component {
+      Type          Step
+      Name          "Step"
+      Show          on
+      Position      [105, 495]
+      Direction     right
+      Flipped       off
+      Parameter {
+        Variable      "Time"
+        Value         "0.3"
+        Show          off
+      }
+      Parameter {
+        Variable      "Before"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "After"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Product
+      Name          "Product"
+      Show          on
+      Position      [165, 110]
+      Direction     up
+      Flipped       off
+      Parameter {
+        Variable      "Inputs"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          Step
+      Name          "Step1"
+      Show          on
+      Position      [80, 60]
+      Direction     right
+      Flipped       off
+      Parameter {
+        Variable      "Time"
+        Value         "0.6"
+        Show          off
+      }
+      Parameter {
+        Variable      "Before"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "After"
+        Value         "0.5"
+        Show          off
       }
     }
     Connection {
@@ -998,7 +1054,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Sine Wave1"
       SrcTerminal   1
-      Points        [175, 155; 175, 180]
+      Points        [180, 210; 180, 230]
       DstComponent  "Sum2"
       DstTerminal   3
     }
@@ -1006,7 +1062,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Sine Wave2"
       SrcTerminal   1
-      Points        [175, 255; 175, 190]
+      Points        [180, 310; 180, 240]
       DstComponent  "Sum2"
       DstTerminal   4
     }
@@ -1014,7 +1070,7 @@ Plecs {
       Type          Signal
       SrcComponent  "White Noise"
       SrcTerminal   1
-      Points        [185, 360; 185, 200]
+      Points        [190, 415; 190, 250]
       DstComponent  "Sum2"
       DstTerminal   5
     }
@@ -1024,21 +1080,6 @@ Plecs {
       SrcTerminal   1
       DstComponent  "Scope digital"
       DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Sine Wave"
-      SrcTerminal   1
-      Points        [180, 65]
-      Branch {
-        Points        [180, 170]
-        DstComponent  "Sum2"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "Goto"
-        DstTerminal   1
-      }
     }
     Connection {
       Type          Signal
@@ -1121,10 +1162,48 @@ Plecs {
       DstComponent  "Mux"
       DstTerminal   2
     }
+    Connection {
+      Type          Signal
+      SrcComponent  "Step"
+      SrcTerminal   1
+      Points        [205, 495; 205, 260]
+      DstComponent  "Sum2"
+      DstTerminal   6
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Product"
+      SrcTerminal   1
+      Points        [190, 110]
+      Branch {
+        Points        [190, 220]
+        DstComponent  "Sum2"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Goto"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Sine Wave"
+      SrcTerminal   1
+      DstComponent  "Product"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Step1"
+      SrcTerminal   1
+      Points        [115, 60; 115, 105]
+      DstComponent  "Product"
+      DstTerminal   2
+    }
     Annotation {
       Name          base64 "R2VyYcOnw6NvIGRvcyBzaW5haXM="
       Position      [120, 20]
     } 
   }
 }
-DemoSignature "reRxtjNzjzQ1ziNeF3jPDlaz7dAajX2FFf3KEkjdkJs="
+DemoSignature "Q4Fnm3w9XzNdYHQ/KHnR5bf6aPFUV0Halak3WLSiLGY="
