@@ -1,0 +1,470 @@
+Plecs {
+  Name          "SOGI_PLL_TOTALMENTE_DIGITAL"
+  Version       "4.1"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  StopTime      "1"
+  Timeout       ""
+  Solver        "dopri"
+  MaxStep       "1e-4"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AssertionAction "1"
+  InitializationCommands "fg = 50; % Hz\nfsamp = 10e3; % Hz"
+  InitialState  "1"
+  SystemState   ""
+  CodeGenParameterInlining "2"
+  CodeGenInliningExceptions "AAAACwAAAAAA"
+  CodeGenFloatingPointFormat "2"
+  CodeGenIntegerWordSize "32"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  Schematic {
+    Location      [342, 29; 1366, 686]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          CScript
+      Name          "digital SOGI-PLL"
+      Show          on
+      Position      [185, 100]
+      Direction     up
+      Flipped       off
+      Parameter {
+        Variable      "NumInputs"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumOutputs"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumContStates"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumDiscStates"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumZCSignals"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DirectFeedthrough"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ts"
+        Value         "1/fsamp"
+        Show          off
+      }
+      Parameter {
+        Variable      "Parameters"
+        Value         "fsamp"
+        Show          off
+      }
+      Parameter {
+        Variable      "LangStandard"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "RuntimeCheck"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "Declarations"
+        Value         base64 "I2luY2x1ZGUgPHN0ZGlvLmg+CiNpbmNsdWRlIDxtYXRoLmg+"
+"CiNpbmNsdWRlIDxzdGRpbnQuaD4KI2luY2x1ZGUgPHN0ZGxpYi5oPgoKI2RlZmluZSBGRyAJNTAKI"
+"2RlZmluZSBQSSAJCTMuMTQxNTkyNjUzNTg5NzkzCiNkZWZpbmUgUEkyIAk5Ljg2OTYwNDQwMTA4OT"
+"M1OAojZGVmaW5lIGJvb2wgaW50CiNkZWZpbmUgdHJ1ZSAxCiNkZWZpbmUgZmFsc2UgMAoKI2RlZml"
+"uZSBGU0FNUCAxMDAwMC4wIC8vUGFyYW1SZWFsRGF0YSgwLDApCiNkZWZpbmUgV0FWRV9UQUJMRV9M"
+"RU4gKCh1aW50MzJfdCkgRlNBTVAvRkcpCgpjb25zdCBkb3VibGUgVHMgPSAwLjAwMDE7CgpzdGF0a"
+"WMgZG91YmxlIHdhdmVfdGFibGVbV0FWRV9UQUJMRV9MRU5dOwoKCgp2b2lkIG1ha2Vfd2F2ZShkb3"
+"VibGUqIGJ1ZmZlciwgc2l6ZV90IGxlbiwgZG91YmxlIGZyZXEpewogICAgY29uc3QgZG91YmxlIGR"
+"0ID0gMS8oKGRvdWJsZSlGU0FNUCk7CiAgICBmb3IoaW50IGk9MDsgaTxsZW47IGkrKyl7CiAgICAg"
+"ICAgY29uc3QgZG91YmxlIHQgPSBpKmR0OwogICAgICAgIAogICAgICAgIGJ1ZmZlcltpXSA9IHNpb"
+"igyKlBJKmZyZXEqdCkKICAgICAgICArKDEuLzEwLikqc2luKDIqUEkqZnJlcSozKnQrMjAqUEkvMT"
+"gwKQogICAgICAgICsoMS4vMjAuKSpzaW4oMipQSSpmcmVxKjUqdC00MCpQSS8xODApOwogICAgfQp"
+"9Cgpkb3VibGUgc29naV9wbGwoY29uc3QgZG91YmxlKiBpbnB1dCwgZmxvYXQgSyl7CgkvLyBkZWZp"
+"bmlyIGJ1ZmZlcnMgZGUgZW50cmFkYSBlIHNhaWRhCgkvLyAgICAgICAgICAgICAgICAgICAgICAgW"
+"i1pbmRleDogICAgMCwgICAgLTEsICAgLTIsIC4uLi4KCXN0YXRpYyBkb3VibGUgb3V0X2J1ZmZbXS"
+"A9IHswLjAsIDAuMCwgMC4wfTsKCXN0YXRpYyBkb3VibGUgaW5fYnVmZltdID0gICB7MC4wLCAwLjA"
+"sIDAuMH07CgkKCS8vIGF0dWFsaXphciB2YXJpw6F2ZWwgZGUgZW50cmFkYQoJaW5fYnVmZlswXSA9"
+"ICAqaW5wdXQ7CgoJY29uc3QgZG91YmxlIEEwID0gMSArIFBJKksqVHMqRkcgKyBwb3coUEkqVHMqR"
+"kcsIDIpOwoJY29uc3QgZG91YmxlIEExID0gMioocG93KFBJKlRzKkZHLCAyKS0xKTsKCWNvbnN0IG"
+"RvdWJsZSBBMiA9IDEgLSBQSSpLKlRzKkZHICsgcG93KFBJKlRzKkZHLCAyKTsKCWNvbnN0IGRvdWJ"
+"sZSBCMCA9IFBJKksqVHMqRkc7Cgljb25zdCBkb3VibGUgQjIgPSAtUEkqSypUcypGRzsKCgkvLyBj"
+"YWxjdWxhciByZXN1bHRhZG8KCW91dF9idWZmWzBdID0gKEIwKmluX2J1ZmZbMF0gKyBCMippbl9id"
+"WZmWzJdIC0gQTIqb3V0X2J1ZmZbMl0gLUExKm91dF9idWZmWzFdKS9BMDsKCgkvLyBhdHVhbGl6YX"
+"IgdmFyacOhdmVpcyBwYXNzYWRhcwoJaW5fYnVmZlsyXSA9IGluX2J1ZmZbMV07Cglpbl9idWZmWzF"
+"dID0gaW5fYnVmZlswXTsKCQoJb3V0X2J1ZmZbMl0gPSBvdXRfYnVmZlsxXTsKCW91dF9idWZmWzFd"
+"ID0gb3V0X2J1ZmZbMF07CgoJcmV0dXJuIG91dF9idWZmWzBdOwp9CgojZGVmaW5lIHdyaXRlX3RvX"
+"2RhYyhjaGFubmVsLCB2YWx1ZSkge1wKCWZsb2F0IHRlbXAgPSB2YWx1ZTtcCglpZih0ZW1wIDwgMC"
+"kgdGVtcCA9IDA7XAoJaWYodGVtcCA+IDI1NSkgdGVtcCA9IDI1NTtcCglPdXRwdXRTaWduYWwoMCw"
+"gY2hhbm5lbCkgPSAoKHVpbnQ4X3QpdGVtcCk7XAp9CgpmbG9hdCBhbXBsaXR1ZGVfc3RlcChpbnQg"
+"Y291bnRfdG8sIGZsb2F0IGdhaW4pewoJc3RhdGljIGludCBjb3VudGVyID0gMDsKCXN0YXRpYyBib"
+"29sIGFjdGl2ZSA9IGZhbHNlOwoJZmxvYXQgcmV0OwoKCWlmIChjb3VudGVyID49IGNvdW50X3RvKX"
+"sKCQlhY3RpdmUgPSAhYWN0aXZlOwoJCWNvdW50ZXIgPSAwOwoJfQoJCglpZihhY3RpdmUpewoJCXJ"
+"ldCA9IGdhaW47Cgl9IGVsc2V7CgkJcmV0ID0gMS4wZjsKCX0KCWNvdW50ZXIrKzsKCXJldHVybiBy"
+"ZXQ7Cn0="
+        Show          off
+      }
+      Parameter {
+        Variable      "StartFcn"
+        Value         "//printf(\"%f\\n\", Ts);\nmake_wave(wave_table, WAVE_TA"
+"BLE_LEN, FG);"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputFcn"
+        Value         "#define \tvg\t\t\t\tInputSignal(0,0)\n#define\t\toutput"
+" \t\tOutputSignal(0,0)\n\nstatic int index = 0;\n\ndouble input_signal = ampl"
+"itude_step(2000, 0.2)*wave_table[index] + 0.2*rand()/RAND_MAX;\nwrite_to_dac("
+"1, 128+100*(input_signal));\n\ndouble pll_output = sogi_pll(&input_signal, 0."
+"2);\nwrite_to_dac(0, 128+100*pll_output);\n\n\n\n\n\n\nindex = (index + 1) % "
+"WAVE_TABLE_LEN;"
+        Show          off
+      }
+      Parameter {
+        Variable      "UpdateFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "DerivativeFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TerminateFcn"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope bruto"
+      Show          on
+      Position      [305, 100]
+      Direction     up
+      Flipped       off
+      Location      [0, 29; 1366, 709]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADIA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGQA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABkAP///wAAAAMAAAVWAAAAafw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABGAP///wAABVYAAAIgAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAB"
+"gAAAGQAAAAHAAAAZAAAAAQAAABkAAAABQAAAGQAAAAIAAAAZAAAAAkAAABkAAAFVgAAAAsBAAABAA"
+"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACbAAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
+"AAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAOPAAAAAQAAAAAAAAPoAA=="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis   on
+        AxisLabel     "Frequency"
+        Scaling       0
+        PhaseDisplay  0
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          VoltageSource
+      Name          "V"
+      Show          on
+      Position      [360, 220]
+      Direction     down
+      Flipped       on
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Gain
+      Name          "Gain"
+      Show          on
+      Position      [285, 220]
+      Direction     right
+      Flipped       off
+      Parameter {
+        Variable      "K"
+        Value         "3.3/256"
+        Show          on
+      }
+      Parameter {
+        Variable      "Multiplication"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope real"
+      Show          on
+      Position      [700, 150]
+      Direction     up
+      Flipped       off
+      Location      [0, 29; 1366, 709]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADIA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGQA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABkAP///wAAAAMAAAVWAAAAafw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABGAP///wAABVYAAAIgAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAB"
+"gAAAGQAAAAHAAAAZAAAAAQAAABkAAAABQAAAGQAAAAIAAAAZAAAAAkAAABkAAAFVgAAAAsBAAABAA"
+"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAABeAAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
+"AAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAPMAAAAAQAAAAAAAAPoAA=="
+      PlotPalettes  "AAAAAQAAAAIAAAABAAAAAgAAAAEC//8u4P//zMwAAAAAAAEC//8AAP///"
+"/8AAAAAAAIAAAABAAAAAAEAAAAAAgAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAABAAAAAAIAAA"
+"ABQAgAAAAAAAAAAAABP/AAAAAAAAAAAAACAAAAAQEAAAABAA=="
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis   on
+        AxisLabel     "Frequency"
+        Scaling       0
+        PhaseDisplay  0
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground"
+      Show          off
+      Position      [360, 255]
+      Direction     up
+      Flipped       off
+    }
+    Component {
+      Type          Capacitor
+      Name          "C1"
+      Show          on
+      Position      [525, 220]
+      Direction     down
+      Flipped       on
+      Parameter {
+        Variable      "C"
+        Value         "100e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "100e-9"
+        Show          on
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R1"
+      Show          on
+      Position      [415, 190]
+      Direction     right
+      Flipped       off
+      Parameter {
+        Variable      "R"
+        Value         ".2"
+        Show          on
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm1"
+      Show          on
+      Position      [585, 215]
+      Direction     up
+      Flipped       off
+    }
+    Component {
+      Type          Ground
+      Name          "Ground1"
+      Show          off
+      Position      [525, 255]
+      Direction     up
+      Flipped       off
+    }
+    Component {
+      Type          Ground
+      Name          "Ground2"
+      Show          off
+      Position      [585, 260]
+      Direction     up
+      Flipped       off
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "digital SOGI-PLL"
+      SrcTerminal   2
+      Points        [240, 100]
+      Branch {
+        DstComponent  "Scope bruto"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [240, 220]
+        DstComponent  "Gain"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground"
+      SrcTerminal   1
+      DstComponent  "V"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R1"
+      SrcTerminal   2
+      Points        [360, 190]
+      DstComponent  "V"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground1"
+      SrcTerminal   1
+      DstComponent  "C1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground2"
+      SrcTerminal   1
+      DstComponent  "Vm1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "C1"
+      SrcTerminal   1
+      Points        [525, 190]
+      Branch {
+        DstComponent  "R1"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [585, 190]
+        DstComponent  "Vm1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Gain"
+      SrcTerminal   2
+      DstComponent  "V"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm1"
+      SrcTerminal   3
+      Points        [635, 215; 635, 150]
+      DstComponent  "Scope real"
+      DstTerminal   1
+    }
+  }
+}
+DemoSignature "qQs5u/ZduuKbp0Hw5mD9MI5hplFxG5psJmcaXnSjAJg="
