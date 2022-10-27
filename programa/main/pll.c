@@ -24,22 +24,23 @@ static const char* MAIN_TAG = "Main Task";
 static uint64_t counter = 0;
 
 void output_update_callback(void*){
-    counter++;
-    static int index = 0;
+    static int index = 0; // índice da tabela do sinal com harmônicas
+    
+    // sinal de entrada com degraus repetidos e ruído branco
+    double input_signal = amplitude_step(20000, 0)*wave_table[index] + 0.3*rand()/RAND_MAX;
 
-    double input_signal = amplitude_step(20000, 0.2)*wave_table[index] + 0.3*rand()/RAND_MAX;
+    // cálculo do sinal de saída
+    double pll_output = sogi_pll(&input_signal, 0.2);
 
+    // escrever sinais de entrada e saída no conversor digital para analógico
     const uint8_t offset = 100;
     const float gain = 80;
-
     dac_output_voltage(DAC_CHANNEL_1, clamp_8_bits(offset+gain*(input_signal))); // GPIO25
-
-    double pll_output = sogi_pll(&input_signal, 0.2);
     dac_output_voltage(DAC_CHANNEL_2, clamp_8_bits(offset+gain*pll_output)); // GPIO26
 
-
-
+    // incrementar índice da tabela do seno
     index = (index + 1) % WAVE_TABLE_LEN;
+    counter++;
 }
 
 void pll_task(){

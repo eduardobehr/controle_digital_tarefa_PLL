@@ -44,9 +44,9 @@ void make_wave(double* buffer, size_t len, double freq){
 
 double sogi_pll(const double* input, float K){
 	// definir buffers de entrada e saida
-	//                       Z-index:    0,    -1,   -2, ....
-	static double out_buff[] = {0.0, 0.0, 0.0};
-	static double in_buff[] =   {0.0, 0.0, 0.0};
+	//                 Z-index:  0      -1      -2
+	static double out_buff[] = {0.0,    0.0,    0.0};
+	static double in_buff[] =  {0.0,    0.0,    0.0};
 	
 	// atualizar variável de entrada
 	in_buff[0] =  *input;
